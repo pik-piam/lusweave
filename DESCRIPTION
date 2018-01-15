@@ -1,0 +1,15 @@
+Package: lusweave
+Type: Package
+Title: Landuse Sweave Utilities
+Version: 1.43.4
+Date: 2017-11-29
+Author: Markus Bonsch, Jan Philipp Dietrich, Florian Humpenoeder
+Maintainer: Jan Philipp Dietrich <dietrich@pik-potsdam.de>
+Description: Set of tools which simplify the usage of SWeave in R and allow to easily create PDF files based on R data.
+Depends: R(>= 2.10.0), methods
+Imports: xtable,  
+	 knitr,
+	 utils
+License: BSD_2_clause + file LICENSE
+LazyData: no
+RoxygenNote: 6.0.1
