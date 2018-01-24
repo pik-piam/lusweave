@@ -29,3 +29,9 @@ update.packages()
 ## Questions / Problems
 
 In case of questions / problems please contact Jan Dietrich <dietrich@pik-potsdam.de>.
+
+
+## Citation
+
+[![DOI](https://zenodo.org/badge/117550260.svg)](https://zenodo.org/badge/latestdoi/117550260)
+
