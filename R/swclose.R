@@ -6,8 +6,6 @@
 #' content specified in \code{stream@content}, using \code{stream@Sweave.sty}
 #' as the style file.
 #' 
-#' @usage swclose(stream,outfile="",latexpath="",clean_output=TRUE,
-#' engine="knitr", save_stream=TRUE, knitquiet = FALSE)
 #' @param stream The \code{swStream} object to be processed.
 #' @param outfile Name of the pdf to be produced. Overwrites the name given in
 #' swopen
@@ -35,7 +33,7 @@
 #' }
 #' 
 #method to create a pdf from the swStream object
-swclose<-function(stream,outfile="",latexpath="",clean_output=TRUE, engine="knitr", save_stream=TRUE, knitquiet = FALSE){
+swclose<-function(stream,outfile="",latexpath="",clean_output=TRUE, engine="knitr", save_stream=TRUE, knitquiet = TRUE){
   
   #Write "content" (extended by "\end{document}")to an Rnw file, 
   #sweave this file and produce the pdf from the .tex file. Then delete the sweaveStream
@@ -87,8 +85,13 @@ swclose<-function(stream,outfile="",latexpath="",clean_output=TRUE, engine="knit
        Sweave(rnwfile,encoding="bytes")
      } else if(engine=="knitr"){
        if (!requireNamespace("knitr", quietly = TRUE)) stop("The package knitr is not available!")
-       knitr::Sweave2knitr(rnwfile,output = rnwfile)
+       message("Start processing pdf with knitr, this may take a while...")
+       start <- Sys.time()
+       suppressMessages(knitr::Sweave2knitr(rnwfile,output = rnwfile))
        suppressWarnings(knitr::knit(rnwfile,quiet = knitquiet))
+       diff <- difftime(Sys.time(),start)
+       unit <- attr(diff,"units")
+       message(paste0("...processing with knitr finished in ",round(diff,2)," ",unit,"!"))
      } else {
        stop("Unknown engine ",engine)
      }

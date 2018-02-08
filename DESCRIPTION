@@ -1,8 +1,8 @@
 Package: lusweave
 Type: Package
 Title: Sweave/Knitr Utilities
-Version: 1.44.0
-Date: 2018-01-26
+Version: 1.45.0
+Date: 2018-02-08
 Authors@R: c(person("Markus", "Bonsch", role = "aut"),
              person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
              person("Florian", "Humpenoeder", email = "humpenoeder@pik-potsdam.de", role = "aut"))

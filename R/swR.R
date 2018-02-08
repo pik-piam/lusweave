@@ -8,7 +8,6 @@
 #' functions will only work with option one, two is only for back
 #' compatibility.
 #' 
-#' @usage swR(stream,func,...,option = "echo=FALSE")
 #' @param stream The \code{swStream} object to be modified.
 #' @param func The R command, that shall be ecexuted. Can be specified as a
 #' string for back compatibility

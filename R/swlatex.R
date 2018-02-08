@@ -5,7 +5,6 @@
 #' Writes plain text to the swStream object. Be careful to escape R special
 #' characters like "\".
 #' 
-#' @usage swlatex(stream,...)
 #' @param stream The \code{swStream} object to be modified.
 #' @param ... The content, that is to be added.
 #' @return No return value.
