@@ -1,0 +1,19 @@
+{
+  "title": "lusweave: Sweave/Knitr Utilities",
+  "version": "1.46.1",
+  "description": "<p>Set of tools which simplify the usage of SWeave/Knitr in R and allow to easily create PDF files from within R.<\/p>",
+  "creators": [
+    {
+      "name": "Bonsch, Markus"
+    },
+    {
+      "name": "Dietrich, Jan Philipp"
+    },
+    {
+      "name": "Klein, David"
+    },
+    {
+      "name": "Humpenoeder, Florian"
+    }
+  ]
+}
