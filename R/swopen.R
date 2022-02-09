@@ -27,7 +27,7 @@ setClass("swStream",representation(name = "character",folder="character",content
 #' stylefile.
 #' @author Markus Bonsch, Jan Philipp Dietrich
 #' @export
-#' @importFrom utils Sweave data 
+#' @importFrom utils Sweave data packageVersion
 #' @importFrom methods is new
 #' @seealso
 #' \code{"\linkS4class{swStream}"},\code{\link{swclose}},\code{\link{swlatex}},\code{\link{swR}},\code{\link{swtable}},\code{\link{swfigure}}
@@ -48,6 +48,10 @@ setClass("swStream",representation(name = "character",folder="character",content
 
 
 swopen<- function(outfile = "out.pdf",folder="",template="default",style="default",orientation=NULL,envir=new.env()){
+  if ("1.36" < packageVersion("knitr")) {
+    stop("There's a known incompatibility with knitr 1.37, ",
+         "you can install 1.36 (`remotes::install_version('knitr', '1.36')`)")
+  }
   
   #Check if outfile contains a path
   if(length(strsplit(outfile,split="/")[[1]])>1){
