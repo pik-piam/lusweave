@@ -48,9 +48,9 @@ setClass("swStream",representation(name = "character",folder="character",content
 
 
 swopen<- function(outfile = "out.pdf",folder="",template="default",style="default",orientation=NULL,envir=new.env()){
-  if ("1.36" < packageVersion("knitr")) {
-    stop("There's a known incompatibility with knitr 1.37, ",
-         "you can install 1.36 (`remotes::install_version('knitr', '1.36')`)")
+  if (packageVersion("knitr") > "1.36") {
+    stop("There's a known incompatibility with knitr versions > 1.36, ",
+         "you can install 1.36 with `remotes::install_version('knitr', '1.36')`")
   }
   
   #Check if outfile contains a path
