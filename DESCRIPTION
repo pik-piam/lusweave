@@ -22,8 +22,9 @@ Imports:
     knitr,
     xtable
 Suggests:
+    covr,
     testthat (>= 3.0.0),
-    covr
+    withr
 Remotes: chroetz/knitr@fix-Sweave2knitr
 Encoding: UTF-8
 LazyData: no
