@@ -1,5 +1,5 @@
 test_that("swclose works", {
-  skip_on_ci()
+  skip_if(Sys.which("pdflatex") == "", "pdflatex was not found")
   withr::with_tempdir({
     pdfDocument <- swopen(outfile = "test.pdf")
     swlatex(pdfDocument, "tttteeeesssstttt")
