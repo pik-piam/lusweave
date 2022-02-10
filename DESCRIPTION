@@ -22,8 +22,10 @@ Imports:
     knitr,
     xtable
 Suggests:
+    testthat (>= 3.0.0),
     covr
 Remotes: chroetz/knitr@fix-Sweave2knitr
 Encoding: UTF-8
 LazyData: no
 RoxygenNote: 7.1.2
+Config/testthat/edition: 3
