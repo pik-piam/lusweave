@@ -2,7 +2,7 @@ Type: Package
 Package: lusweave
 Title: Sweave/Knitr Utilities
 Version: 1.46.2
-Date: 2022-02-09
+Date: 2022-02-10
 Authors@R: c(
     person("Markus", "Bonsch", role = "aut"),
     person("Jan Philipp", "Dietrich", , "dietrich@pik-potsdam.de", role = c("aut", "cre")),
@@ -19,10 +19,11 @@ Depends:
     methods,
     R (>= 2.10.0)
 Imports:
-    knitr (<= 1.36),
+    knitr,
     xtable
 Suggests:
     covr
+Remotes: chroetz/knitr@fix-Sweave2knitr
 Encoding: UTF-8
 LazyData: no
 RoxygenNote: 7.1.2
