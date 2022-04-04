@@ -1,6 +1,6 @@
 # Sweave/Knitr Utilities
 
-R package **lusweave**, version **1.46.2**
+R package **lusweave**, version **1.46.3**
 
 [![CRAN status](https://www.r-pkg.org/badges/version/lusweave)](https://cran.r-project.org/package=lusweave) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1158594.svg)](https://doi.org/10.5281/zenodo.1158594) [![R build status](https://github.com/pik-piam/lusweave/workflows/check/badge.svg)](https://github.com/pik-piam/lusweave/actions) [![codecov](https://codecov.io/gh/pik-piam/lusweave/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/lusweave) [![r-universe](https://pik-piam.r-universe.dev/badges/lusweave)](https://pik-piam.r-universe.dev/ui#builds)
 
@@ -39,7 +39,7 @@ In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pi
 
 To cite package **lusweave** in publications use:
 
-Bonsch M, Dietrich J, Klein D, Humpenoeder F (2022). _lusweave: Sweave/Knitr Utilities_. doi: 10.5281/zenodo.1158594 (URL: https://doi.org/10.5281/zenodo.1158594), R package version 1.46.2, <URL: https://github.com/pik-piam/lusweave>.
+Bonsch M, Dietrich J, Klein D, Humpenoeder F (2022). _lusweave: Sweave/Knitr Utilities_. doi: 10.5281/zenodo.1158594 (URL: https://doi.org/10.5281/zenodo.1158594), R package version 1.46.3, <URL: https://github.com/pik-piam/lusweave>.
 
 A BibTeX entry for LaTeX users is
 
@@ -48,7 +48,7 @@ A BibTeX entry for LaTeX users is
   title = {lusweave: Sweave/Knitr Utilities},
   author = {Markus Bonsch and Jan Philipp Dietrich and David Klein and Florian Humpenoeder},
   year = {2022},
-  note = {R package version 1.46.2},
+  note = {R package version 1.46.3},
   doi = {10.5281/zenodo.1158594},
   url = {https://github.com/pik-piam/lusweave},
 }

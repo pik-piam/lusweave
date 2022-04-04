@@ -1,6 +1,6 @@
 {
   "title": "lusweave: Sweave/Knitr Utilities",
-  "version": "1.46.2",
+  "version": "1.46.3",
   "description": "<p>Set of tools which simplify the usage of SWeave/Knitr in R\n    and allow to easily create PDF files from within R.<\/p>",
   "creators": [
     {

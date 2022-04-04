@@ -48,13 +48,6 @@ setClass("swStream",representation(name = "character",folder="character",content
 
 
 swopen<- function(outfile = "out.pdf",folder="",template="default",style="default",orientation=NULL,envir=new.env()){
-  if (packageVersion("knitr") == "1.37") {
-    warning("The lusweave package (for creating pdfs) does not work with knitr 1.37. ",
-            "You can get a fixed development version of knitr with\n",
-            "remotes::install_github('chroetz/knitr', ref = 'fix-Sweave2knitr')\n",
-            "or get knitr 1.36 with\n",
-            "remotes::install_version('knitr', '1.36')")
-  }
   #Check if outfile contains a path
   if(length(strsplit(outfile,split="/")[[1]])>1){
     if(folder!="")stop("ERROR: outfile contains a path and 'folder' is specified. Can not handle that")
