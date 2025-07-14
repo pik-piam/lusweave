@@ -98,7 +98,7 @@ swclose <- function(stream, outfile = "", latexpath = "", clean_output = TRUE, e
     if (!is(tmp, "try-error")) assign("stream", tmp, envir = globalenv)
 
     # check for command pdflatex and change latexpath in the case that it cannot be found
-    latexpaths <- c(latexpath, "/iplex/01/sys/applications/texlive/bin/x86_64-linux/", "", "not found")
+    latexpaths <- c(latexpath, "", "not found")
     for (latexpath in latexpaths) {
       if (Sys.which(paste0(latexpath, "pdflatex")) != "") break
     }
