@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using the metadata from this file.
+type: software
+title: 'lusweave: Sweave/Knitr Utilities'
+version: 1.46.4
+date-released: '2025-07-14'
+abstract: Set of tools which simplify the usage of SWeave/Knitr in R and allow to
+  easily create PDF files from within R.
+authors:
+- family-names: Bonsch
+  given-names: Markus
+- family-names: Dietrich
+  given-names: Jan Philipp
+  email: dietrich@pik-potsdam.de
+- family-names: Klein
+  given-names: David
+  email: dklein@pik-potsdam.de
+- family-names: Humpenoeder
+  given-names: Florian
+  email: humpenoeder@pik-potsdam.de
+license: BSD-2-Clause
+repository-code: https://github.com/pik-piam/lusweave
+doi: 10.5281/zenodo.1158594
+

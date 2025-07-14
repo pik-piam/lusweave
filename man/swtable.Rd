@@ -57,7 +57,7 @@ you want to have vertical lines.}
 \item{display}{How shall the content be displayed? Use "d" (for integers),
 "f", "e", "E", "g", "G", "fg" (for reals), or "s" (for strings).}
 
-\item{colsplit}{Number of columns after which the table is split into two (Integer). 
+\item{colsplit}{Number of columns after which the table is split into two (Integer).
 Table will not be splitted up if set to NULL.}
 
 \item{...}{Further options passed to print.xtable.}
@@ -78,13 +78,13 @@ placement etc. See that manuals for more information
 }
 \examples{
 \dontrun{
-sw <- swopen(outfile="test.pdf")
-a <- array(1:45,c(5,2,3),dimnames=list(paste0("a",1:5),paste0("b",1:2),paste0("c",1:3)))
+sw <- swopen(outfile = "test.pdf")
+a <- array(1:45, c(5, 2, 3), dimnames = list(paste0("a", 1:5), paste0("b", 1:2), paste0("c", 1:3)))
 print(a)
-swtable(sw, a[,,1], "test 1")
-swtable(sw, a[,1,], "test 2")
-swtable(sw, a[,1,], "transpose test", transpose=TRUE)
-swtable(sw, a[,1,], "colsplit test", transpose=TRUE, colsplit=2)
+swtable(sw, a[, , 1], "test 1")
+swtable(sw, a[, 1, ], "test 2")
+swtable(sw, a[, 1, ], "transpose test", transpose = TRUE)
+swtable(sw, a[, 1, ], "colsplit test", transpose = TRUE, colsplit = 2)
 swclose(sw)
 }
 }

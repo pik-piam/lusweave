@@ -54,8 +54,8 @@ is correctly embedded.
 }
 \examples{
 \dontrun{
-test<-swopen(outfile="test.pdf")
-swfigure(test,"plot",0,0,tex_caption="test figure",fig.width=0.5)
+test <- swopen(outfile = "test.pdf")
+swfigure(test, "plot", 0, 0, tex_caption = "test figure", fig.width = 0.5)
 swclose(test)
 }
 }

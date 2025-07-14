@@ -31,14 +31,14 @@ compatibility.
 }
 \examples{
 \dontrun{
-test<-swopen(outfile="test.pdf")
-swR(test,print,ls)
-swR(test,print,"bla_blubb")
-x<-c(1,2,3)
-swR(test,print,paste(x,"bla"))
+test <- swopen(outfile = "test.pdf")
+swR(test, print, ls)
+swR(test, print, "bla_blubb")
+x <- c(1, 2, 3)
+swR(test, print, paste(x, "bla"))
 swclose(test)
 # Only for back compatibility
-swR(test,"print","bla_blubb")
+swR(test, "print", "bla_blubb")
 }
 
 
