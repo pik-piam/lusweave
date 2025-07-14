@@ -61,25 +61,24 @@ swclose <- function(stream, outfile = "", latexpath = "", clean_output = TRUE, e
       assign("stream", stream, envir = envir)
     }
 
-         stream@content <- c(stream@content, "\\end{document}")
+    stream@content <- c(stream@content, "\\end{document}")
 
-    this_dir <- getwd()
-    if (stream@folder != "") setwd(stream@folder)
+    if (stream@folder != "") withr::local_dir(stream@folder)
 
     if (save_stream) save(stream, file = paste0(stream@name, ".rda"), compress = "xz")
 
-                 writeLines(stream@content, paste(strsplit(stream@name, ".pdf", fixed = TRUE)[[1]], ".Rnw", sep = ""))
-                 # create the style file if no external one is specified
-                 writeLines(stream@Sweave.sty, "Sweave.sty")
-                 # execute the Sweave routine which executes the R code in the Rnw file and produces a tex file
+    writeLines(stream@content, paste(strsplit(stream@name, ".pdf", fixed = TRUE)[[1]], ".Rnw", sep = ""))
+    # create the style file if no external one is specified
+    writeLines(stream@Sweave.sty, "Sweave.sty")
+    # execute the Sweave routine which executes the R code in the Rnw file and produces a tex file
 
 
     # Attach the stream to the global environment because this is where Sweave does the evaluation
-                 globalenv <- .GlobalEnv
+    globalenv <- .GlobalEnv
     tmp <- try(get("stream", envir = globalenv), silent = TRUE)
     assign("stream", stream, envir = globalenv)
     # now run Sweave or knitr
-                 rnwfile <- paste(strsplit(stream@name, ".pdf", fixed = TRUE)[[1]], ".Rnw", sep = "")
+    rnwfile <- paste(strsplit(stream@name, ".pdf", fixed = TRUE)[[1]], ".Rnw", sep = "")
     if (engine == "Sweave") {
       Sweave(rnwfile, encoding = "bytes")
     } else if (engine == "knitr") {
@@ -113,8 +112,7 @@ swclose <- function(stream, outfile = "", latexpath = "", clean_output = TRUE, e
     file.rename(paste(strsplit(stream@name, ".pdf", fixed = TRUE)[[1]], ".log", sep = ""), paste(gsub("-_-_-", "\\.", strsplit(stream@name, ".pdf", fixed = TRUE)[[1]]), ".log", sep = ""))
     # remove unnecessary compilation files
     if (clean_output == TRUE) log <- suppressWarnings(file.remove(stream@auxfiles))
-    setwd(this_dir)
   } else {
-          stop("Input is not a sweaveStream!")
-         }
+    stop("Input is not a sweaveStream!")
+  }
 }

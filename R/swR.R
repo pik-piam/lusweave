@@ -42,8 +42,7 @@ swR <- function(stream, func, ..., option = "echo=FALSE") {
   orig_stream <- stream
   stufftowrite <- NULL
   if (inherits(stream, "swStream")) {
-    tryCatch(
-{
+    tryCatch({
       pos <- length(stream@functions)
       args <- list(...)
 
@@ -59,7 +58,7 @@ swR <- function(stream, func, ..., option = "echo=FALSE") {
         # save all arguments as a list in the objects slot of the stream object.
         stream@arguments[[pos + 1]] <- args
         # paste the arguments in the appropriate format
-        for (i in 1:length(args)) {
+        for (i in seq_along(args)) {
           if (any(names(args) != "")) {
             if (names(args)[i] != "") {
               stufftowrite <- paste(stufftowrite, names(stream@arguments[[pos + 1]])[i], "=", "stream@arguments[[", pos + 1, "]][[", i, "]],", sep = "")
@@ -77,10 +76,10 @@ swR <- function(stream, func, ..., option = "echo=FALSE") {
       stufftowrite <- paste(stufftowrite, ")", sep = "")
       stufftowrite <- c(paste("<<", option, ">>=", sep = ""), stufftowrite, "@")
     },
- error = function(e) {
-warning("Error occurred in swR, stream will be set back to previous value.\n   Error message: ", e$message, call. = FALSE)
-stream <- orig_stream
-})
+    error = function(e) {
+      warning("Error occurred in swR, stream will be set back to previous value.\n   Error message: ", e$message, call. = FALSE)
+      stream <- orig_stream
+    })
     # Save the updated stream object
     assign("stream", stream, envir = envir)
     swlatex(envir, stufftowrite)
