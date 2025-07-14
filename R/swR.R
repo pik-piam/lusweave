@@ -41,7 +41,7 @@ swR<-function(stream,func,...,option = "echo=FALSE"){
   stream<-get("stream",envir=envir,inherits=FALSE)
   orig_stream <- stream
   stufftowrite <- NULL
-  if(class(stream)=="swStream"){
+  if (inherits(stream, "swStream")) {
     tryCatch({
       pos<-length(stream@functions)
       args<-list(...)

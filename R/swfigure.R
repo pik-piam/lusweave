@@ -33,7 +33,7 @@
 swfigure<-function(stream,plot_func,...,tex_caption="",tex_label="",fig.placement="H",fig.width="",fig.orientation="portrait",sw_option="",sw_label="AUTO"){
   envir<-stream
   stream<-get("stream",envir=envir,inherits=FALSE)
-  if(class(stream)=="swStream"){
+  if (inherits(stream, "swStream")) {
 
     #each plot has to have a different label. AUTO will take care of that
     if(sw_label=="") stop("Each plot needs a different label to make things work. If you don't specify any label, it will be taken care of automatically")

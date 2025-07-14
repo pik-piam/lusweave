@@ -76,7 +76,7 @@ swtable<-function(stream,x,caption=NULL, label=NULL,transpose=FALSE, digits=NULL
 
   envir<-stream
   stream<-get("stream",envir=envir,inherits=FALSE)
-  if(class(stream)=="swStream"){
+  if (inherits(stream, "swStream")) {
     # Take care of alignment, vertical and horizontal lines
     if(length(hor.lines)==1){
       if(hor.lines==0){

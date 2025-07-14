@@ -24,7 +24,7 @@
 swlatex<-function(stream,...){
   envir<-stream
   stream<-get("stream",envir=envir,inherits=FALSE)
-  if(class(stream)=="swStream"){
+  if (inherits(stream, "swStream")) {
     stream@content<-c(stream@content,...)
     #make sure, that the object stream is changed in the correct environment (saved in the sweave object)
     assign("stream",stream,envir = envir)

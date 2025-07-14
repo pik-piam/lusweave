@@ -44,7 +44,7 @@ swclose<-function(stream,outfile="",latexpath="",clean_output=TRUE, engine="knit
     envir <- new.env()
     assign("stream",stream,envir=envir)
   }
-  if(class(stream)=="swStream"){
+  if (inherits(stream, "swStream")) {
      #update the name if necessary
      if(outfile!=""){
        if(length(strsplit(outfile,split="/")[[1]])>1){
