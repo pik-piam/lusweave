@@ -53,7 +53,11 @@ swfigure <- function(stream, plot_func, ..., tex_caption = "", tex_label = "", f
     if (fig.placement != "") startplot <- paste(startplot, "[", fig.placement, "]", sep = "")
     startplot <- c(startplot, "\\begin{center}")
     swlatex(envir, startplot)
-    swR(envir, plot_func, ..., option = paste(sw_label, ",fig=TRUE,echo=FALSE", sep = ""))
+    # The following includes flags that disable warnings and messages for figures.
+    # This is due a potential defect in knitr that results in invalid LaTeX (yihui/knitr/issues/2412). 
+    # The warnings and messages should be re-enabled as soon as the knitr issue is resolved.
+    # -- patrick.rein (2025-07-15)
+    swR(envir, plot_func, ..., option = paste(sw_label, ",fig=TRUE,echo=FALSE,warning=FALSE,message=FALSE", sep=""))
     endplot <- "\\end{center}"
     if (tex_caption != "") endplot <- c(endplot, paste("\\caption{", gsub("$", "\\$", tex_caption, fixed = TRUE), "}", sep = ""))
     if (tex_label != "") endplot <- c(endplot, paste("\\label{", gsub("$", "\\$", tex_label, fixed = TRUE), "}", sep = ""))
