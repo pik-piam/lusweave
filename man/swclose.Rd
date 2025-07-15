@@ -47,11 +47,11 @@ as the style file.
 }
 \examples{
 \dontrun{
-test<-swopen(outfile="test.pdf")
-swlatex(test,"tttteeeesssstttt")
+test <- swopen(outfile = "test.pdf")
+swlatex(test, "tttteeeesssstttt")
 swclose(test)
-#Change the name
-swclose(test,outfile="test_2.pdf")
+# Change the name
+swclose(test, outfile = "test_2.pdf")
 }
 
 }

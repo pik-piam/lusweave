@@ -23,8 +23,8 @@ characters like "\".
 }
 \examples{
 \dontrun{
-test<-swopen(outfile="test.pdf")
-swlatex(test,"This is a test text")
+test <- swopen(outfile = "test.pdf")
+swlatex(test, "This is a test text")
 swclose(test)
 }
 
