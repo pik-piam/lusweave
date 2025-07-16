@@ -7,7 +7,7 @@
 General lusweave-dataset
 }
 \details{
-Please do not directly access that data. It should be only used by library functions.
+Pleasde do not directly acces that data. It should be only used by library functions.
 }
 \author{
 Jan Philipp Dietrich

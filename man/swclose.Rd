@@ -10,7 +10,7 @@ swclose(
   latexpath = "",
   clean_output = TRUE,
   engine = "knitr",
-  save_stream = FALSE,
+  save_stream = TRUE,
   knitquiet = TRUE
 )
 }
@@ -29,7 +29,7 @@ they remain, including each plot in its own pdf.}
 \item{engine}{Engine to use for conversion. Currently available: Sweave and
 knitr.}
 
-\item{save_stream}{If true (default is false) stream is saved to .rda file.}
+\item{save_stream}{If true (default) stream is saved to .rda file.}
 
 \item{knitquiet}{If false (default) progressbar and messages are printed
 otherwise suppressed.}

@@ -15,7 +15,7 @@
 #' they remain, including each plot in its own pdf.
 #' @param engine Engine to use for conversion. Currently available: Sweave and
 #' knitr.
-#' @param save_stream If true (default is false) stream is saved to .rda file.
+#' @param save_stream If true (default) stream is saved to .rda file.
 #' @param knitquiet If false (default) progressbar and messages are printed
 #' otherwise suppressed.
 #' @return No return value.
@@ -33,7 +33,7 @@
 #' }
 #'
 # method to create a pdf from the swStream object
-swclose <- function(stream, outfile = "", latexpath = "", clean_output = TRUE, engine = "knitr", save_stream = FALSE, knitquiet = TRUE) {
+swclose <- function(stream, outfile = "", latexpath = "", clean_output = TRUE, engine = "knitr", save_stream = TRUE, knitquiet = TRUE) {
   # Write "content" (extended by "\end{document}")to an Rnw file,
   # sweave this file and produce the pdf from the .tex file. Then delete the sweaveStream
   if (is.environment(stream)) {

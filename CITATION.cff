@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using the metadata from this file.
 type: software
 title: 'lusweave: Sweave/Knitr Utilities'
-version: 1.46.5
-date-released: '2025-07-16'
+version: 1.46.4
+date-released: '2025-07-14'
 abstract: Set of tools which simplify the usage of SWeave/Knitr in R and allow to
   easily create PDF files from within R.
 authors:
