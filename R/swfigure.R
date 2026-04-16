@@ -23,7 +23,8 @@
 #' @author Markus Bonsch
 #' @export
 #' @seealso
-#' \code{"\linkS4class{swStream}"},\code{\link{swopen}},\code{\link{swclose}},\code{\link{swlatex}},\code{\link{swR}},\code{\link{swtable}}
+#' \code{"\linkS4class{swStream}"},\code{\link{swopen}},\code{\link{swclose}},
+#' \code{\link{swlatex}},\code{\link{swR}},\code{\link{swtable}}
 #' @examples
 #' \dontrun{
 #' test <- swopen(outfile = "test.pdf")
@@ -35,28 +36,46 @@ swfigure <- function(stream, plot_func, ..., tex_caption = "", tex_label = "", f
   stream <- get("stream", envir = envir, inherits = FALSE)
   if (inherits(stream, "swStream")) {
     # each plot has to have a different label. AUTO will take care of that
-    if (sw_label == "") stop("Each plot needs a different label to make things work. If you don't specify any label, it will be taken care of automatically")
-    if (sw_label == "AUTO") sw_label <- length(stream@functions) + 1
+    if (sw_label == "") {
+      stop("Each plot needs a different label to make things work. If you don't specify any label, it will be taken care of automatically")
+    }
+    if (sw_label == "AUTO") {
+      sw_label <- length(stream@functions) + 1
+    }
 
     # remember the names of the plot files to delete them afterwards.
-    stream@auxfiles <- c(stream@auxfiles, paste(strsplit(stream@name, "\\.pdf")[[1]], "-", sw_label, ".", c("eps", "pdf"), sep = ""))
+    stream@auxfiles <- c(stream@auxfiles,
+                         paste(strsplit(stream@name, "\\.pdf")[[1]], "-", sw_label, ".", c("eps", "pdf"),
+                               sep = ""))
     assign("stream", stream, envir = envir)
     # Add the orientation and the options
-    if (fig.orientation == "landscape") sw_label <- paste(sw_label, ",width=11.69", sep = "")
-    if (sw_option != "") sw_label <- paste(sw_label, ",", sw_option, sep = "")
+    if (fig.orientation == "landscape") {
+      sw_label <- paste(sw_label, ",width=11.69", sep = "")
+    }
+    if (sw_option != "") {
+      sw_label <- paste(sw_label, ",", sw_option, sep = "")
+    }
 
     # change the figure width
-    if (fig.width != "") swlatex(envir, stufftowrite = paste("\\setkeys{Gin}{width=", fig.width, "\\textwidth}"))
+    if (fig.width != "") {
+      swlatex(envir, stufftowrite = paste("\\setkeys{Gin}{width=", fig.width, "\\textwidth}"))
+    }
 
     # build figure environment and put the plot command
     startplot <- "\\begin{figure}"
-    if (fig.placement != "") startplot <- paste(startplot, "[", fig.placement, "]", sep = "")
+    if (fig.placement != "") {
+      startplot <- paste(startplot, "[", fig.placement, "]", sep = "")
+    }
     startplot <- c(startplot, "\\begin{center}")
     swlatex(envir, startplot)
-    swR(envir, plot_func, ..., option = paste(sw_label, ",fig=TRUE,echo=FALSE", sep=""))
+    swR(envir, plot_func, ..., option = paste(sw_label, ",fig=TRUE,echo=FALSE", sep = ""))
     endplot <- "\\end{center}"
-    if (tex_caption != "") endplot <- c(endplot, paste("\\caption{", gsub("$", "\\$", tex_caption, fixed = TRUE), "}", sep = ""))
-    if (tex_label != "") endplot <- c(endplot, paste("\\label{", gsub("$", "\\$", tex_label, fixed = TRUE), "}", sep = ""))
+    if (tex_caption != "") {
+      endplot <- c(endplot, paste("\\caption{", gsub("$", "\\$", tex_caption, fixed = TRUE), "}", sep = ""))
+    }
+    if (tex_label != "") {
+      endplot <- c(endplot, paste("\\label{", gsub("$", "\\$", tex_label, fixed = TRUE), "}", sep = ""))
+    }
     endplot <- c(endplot, "\\end{figure}")
     swlatex(envir, endplot)
 
