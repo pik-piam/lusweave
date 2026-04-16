@@ -1,8 +1,8 @@
 Type: Package
 Package: lusweave
 Title: Sweave/Knitr Utilities
-Version: 1.46.5
-Date: 2025-07-16
+Version: 1.46.6
+Date: 2026-04-16
 Authors@R: c(
     person("Markus", "Bonsch", role = "aut"),
     person("Jan Philipp", "Dietrich", , "dietrich@pik-potsdam.de", role = c("aut", "cre")),
@@ -27,5 +27,5 @@ Suggests:
     testthat (>= 3.0.0)
 Encoding: UTF-8
 LazyData: no
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Config/testthat/edition: 3

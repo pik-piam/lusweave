@@ -60,7 +60,8 @@ swclose(test)
 }
 }
 \seealso{
-\code{"\linkS4class{swStream}"},\code{\link{swopen}},\code{\link{swclose}},\code{\link{swlatex}},\code{\link{swR}},\code{\link{swtable}}
+\code{"\linkS4class{swStream}"},\code{\link{swopen}},\code{\link{swclose}},
+\code{\link{swlatex}},\code{\link{swR}},\code{\link{swtable}}
 }
 \author{
 Markus Bonsch
